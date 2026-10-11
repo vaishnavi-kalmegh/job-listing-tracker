@@ -22,3 +22,6 @@ htmlcov/
 # Human-review exports contain job titles and stay local/private
 reports/role_review.csv
 reports/entry_level_review.csv
+
+# Private human-review exports contain job titles and metadata
+reports/unclassified_review.csv
