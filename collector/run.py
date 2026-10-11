@@ -33,6 +33,16 @@ def load_boards() -> list[dict[str, str]]:
     return [r for r in rows if r.get("platform") in {"greenhouse", "lever"} and r.get("token")]
 
 
+def collect_complete_board(connection, client: CollectorClient, board: dict[str, str]) -> dict[str, int]:
+    """Persist a board only after the API and every record normalize successfully."""
+    platform, token = board["platform"], board["token"]
+    raw_jobs, complete, status = client.fetch(platform, token)
+    if not complete:
+        raise ProbeError(f"incomplete_fetch:{status}")
+    normalized = [normalize_job(platform, raw) for raw in raw_jobs]
+    return save_complete_snapshot(connection, platform, token, board.get("company_name", token), normalized)
+
+
 def write_feasibility_section(summary: dict) -> None:
     existing = FEASIBILITY.read_text(encoding="utf-8") if FEASIBILITY.exists() else "# Phase 1 feasibility report\n"
     start_marker = "<!-- TECH_FEASIBILITY_START -->"
@@ -110,11 +120,7 @@ def run() -> dict:
         platform, token = board["platform"], board["token"]
         started = utc_now()
         try:
-            raw_jobs, complete, status = client.fetch(platform, token)
-            if not complete:
-                raise ProbeError(f"incomplete_fetch:{status}")
-            normalized = [normalize_job(platform, raw) for raw in raw_jobs]
-            result = save_complete_snapshot(connection, platform, token, board.get("company_name", token), normalized)
+            result = collect_complete_board(connection, client, board)
             totals["boards_fetched"] += 1
             totals["new_jobs"] += result["new"]
             totals["changed_jobs"] += result["changed"]
