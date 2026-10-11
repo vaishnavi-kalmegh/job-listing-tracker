@@ -45,3 +45,22 @@ def test_non_tech_and_unclassified_are_retained_and_descriptions_do_not_label(tm
     assert stored["unknown"]["role_category"] == "Unclassified"
     assert stored["unknown"]["is_tech"] is None
     assert db.execute("SELECT COUNT(*) FROM jobs").fetchone()[0] == 2
+
+
+def test_incomplete_fetch_never_marks_prior_job_inactive(tmp_path):
+    import pytest
+    from collector.run import collect_complete_board
+    from discovery.discover import ProbeError
+
+    db = connect(tmp_path / "jobs.db")
+    save_complete_snapshot(db, "lever", "acme", "Acme", [job("still-open")], "2026-10-12T00:00:00+00:00")
+
+    class IncompleteClient:
+        def fetch(self, platform, token):
+            return [], False, "timeout_or_partial_page"
+
+    with pytest.raises(ProbeError):
+        collect_complete_board(db, IncompleteClient(), {
+            "platform": "lever", "token": "acme", "company_name": "Acme"
+        })
+    assert db.execute("SELECT is_active FROM jobs WHERE job_id='still-open'").fetchone()[0] == 1
