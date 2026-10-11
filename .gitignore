@@ -18,3 +18,7 @@ data/raw/
 .pytest_cache/
 .coverage
 htmlcov/
+
+# Human-review exports contain job titles and stay local/private
+reports/role_review.csv
+reports/entry_level_review.csv
