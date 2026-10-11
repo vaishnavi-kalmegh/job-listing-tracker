@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# Local discovery evidence and private/raw data
+reports/discovery_run.json
+data/private/
+data/raw/
+*.db
+*.sqlite
+*.sqlite3
+*.jsonl
+
+# Generated local test/cache artifacts
+.pytest_cache/
+.coverage
+htmlcov/
