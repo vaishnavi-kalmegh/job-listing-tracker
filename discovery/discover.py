@@ -262,6 +262,12 @@ def verify_candidate(client: PoliteClient, seed: dict[str, str], platform: str, 
         "entry_level_jobs": json.dumps({city: entry_counts.get(city, 0) for city in CITY_BUCKETS}, sort_keys=True),
         "verified_at": datetime.now(timezone.utc).isoformat() if verified else "",
         "robots": robots,
+        # Full descriptions remain only in the ignored local run log; this
+        # field is never copied to data/boards.csv or any committed report.
+        "jobs_for_review": [
+            {"title": job_title(job), "description": job_description(job)}
+            for job in jobs
+        ] if verified else [],
     }
 
 
