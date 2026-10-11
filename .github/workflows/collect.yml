@@ -18,8 +18,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 90
     env:
-      DATA_REPO_TOKEN: \${{ secrets.DATA_REPO_TOKEN }}
-      JOB_TRACKER_DB: \${{ github.workspace }}/private-data/jobs.db
+      DATA_REPO_TOKEN: ${{ secrets.DATA_REPO_TOKEN }}
+      JOB_TRACKER_DB: ${{ github.workspace }}/private-data/jobs.db
     steps:
       - name: Check private-data token is configured
         shell: bash
@@ -38,7 +38,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: vaishnavi-kalmegh/job-listing-data
-          token: \${{ secrets.DATA_REPO_TOKEN }}
+          token: ${{ secrets.DATA_REPO_TOKEN }}
           path: private-data
           persist-credentials: true
 
