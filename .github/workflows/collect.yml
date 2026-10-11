@@ -68,7 +68,7 @@ jobs:
           cp "$JOB_TRACKER_DB" "private-data/snapshots/jobs-$(date -u +%F).sqlite3"
           git -C private-data config user.name "github-actions[bot]"
           git -C private-data config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git -C private-data add jobs.db run_summary.json snapshots/
+          git -C private-data add jobs.db run_summary.json role_review.csv snapshots/
           if ! git -C private-data diff --cached --quiet; then
             git -C private-data commit -m "Daily job snapshot $(date -u +%F)"
             git -C private-data push
