@@ -6,7 +6,6 @@ import json
 import logging
 import os
 from collections import Counter
-from datetime import datetime, timezone
 from pathlib import Path
 
 from collector.client import CollectorClient, normalize_job
@@ -18,7 +17,10 @@ BOARDS = ROOT / "data" / "boards.csv"
 DB_PATH = Path(os.environ.get("JOB_TRACKER_DB", str(ROOT / "data" / "private" / "jobs.db")))
 SUMMARY_JSON = ROOT / "reports" / "daily_run_summary.json"
 SUMMARY_MD = ROOT / "reports" / "daily_run_summary.md"
+FEASIBILITY = ROOT / "reports" / "feasibility.md"
 LOG = logging.getLogger("collector")
+CITY_BUCKETS = ("Pune", "Hyderabad", "Bengaluru", "Delhi NCR", "Mumbai")
+EXTRA_BUCKETS = ("India - Remote/Other", "Unclassified")
 CATEGORIES = (
     "Software Engineering", "Data/ML/AI", "DevOps/Cloud/SRE/Infra", "QA/Test",
     "Security", "IT Support/Systems", "Product/Design (tech-adjacent)", "Non-Tech", "Unclassified",
@@ -29,6 +31,40 @@ def load_boards() -> list[dict[str, str]]:
     with BOARDS.open(encoding="utf-8-sig", newline="") as handle:
         rows = list(csv.DictReader(handle))
     return [r for r in rows if r.get("platform") in {"greenhouse", "lever"} and r.get("token")]
+
+
+def write_feasibility_section(summary: dict) -> None:
+    existing = FEASIBILITY.read_text(encoding="utf-8") if FEASIBILITY.exists() else "# Phase 1 feasibility report\n"
+    start_marker = "<!-- TECH_FEASIBILITY_START -->"
+    end_marker = "<!-- TECH_FEASIBILITY_END -->"
+    section = [
+        start_marker, "## Tech-only feasibility (latest successful collector history)", "",
+        f"- Active jobs across the five cities: **{summary['five_city_all_jobs']}**.",
+        f"- Active tech jobs across the five cities: **{summary['five_city_tech_jobs']}**.",
+        f"- Tech-only volume clears approximately 300 jobs: **{'YES' if summary['five_city_tech_jobs'] >= 300 else 'NO'}**.",
+        "- Counts below are active records in the private collection database; all roles are collected, and filtering is applied only for analysis.", "",
+        "| City | All active jobs | Tech-only jobs |", "|---|---:|---:|",
+    ]
+    for city in CITY_BUCKETS:
+        row = summary["city_counts"].get(city, {})
+        section.append(f"| {city} | {row.get('all_jobs', 0)} | {row.get('tech_jobs', 0)} |")
+    section += [
+        "", "### Excluded from analysis", "",
+        "These records remain in collection history and are excluded from tech-only analysis.", "",
+        "| City/bucket | Non-Tech | Unclassified |", "|---|---:|---:|",
+    ]
+    for city in (*CITY_BUCKETS, *EXTRA_BUCKETS):
+        row = summary["city_counts"].get(city, {})
+        section.append(f"| {city} | {row.get('non_tech_jobs', 0)} | {row.get('unclassified_jobs', 0)} |")
+    section.append(end_marker)
+    block = "\n".join(section)
+    if start_marker in existing and end_marker in existing:
+        before = existing.split(start_marker, 1)[0].rstrip()
+        after = existing.split(end_marker, 1)[1].lstrip()
+        updated = before + "\n\n" + block + ("\n\n" + after if after else "") + "\n"
+    else:
+        updated = existing.rstrip() + "\n\n" + block + "\n"
+    FEASIBILITY.write_text(updated, encoding="utf-8")
 
 
 def write_summary(summary: dict) -> None:
@@ -44,6 +80,7 @@ def write_summary(summary: dict) -> None:
         f"- Changed jobs: {summary['changed_jobs']}",
         f"- Vanished jobs (confirmed only by complete snapshots): {summary['vanished_jobs']}",
         f"- Active jobs in private history after run: {summary['active_jobs_after_run']}",
+        f"- Active tech jobs in the five cities: {summary['five_city_tech_jobs']}",
         "", "## Counts by role category (active jobs in private history)", "",
         "| Role category | Count |", "|---|---:|",
     ]
@@ -76,10 +113,7 @@ def run() -> dict:
             raw_jobs, complete, status = client.fetch(platform, token)
             if not complete:
                 raise ProbeError(f"incomplete_fetch:{status}")
-            normalized = []
-            for raw in raw_jobs:
-                # A malformed record makes the snapshot incomplete: do not infer disappearance.
-                normalized.append(normalize_job(platform, raw))
+            normalized = [normalize_job(platform, raw) for raw in raw_jobs]
             result = save_complete_snapshot(connection, platform, token, board.get("company_name", token), normalized)
             totals["boards_fetched"] += 1
             totals["new_jobs"] += result["new"]
@@ -106,9 +140,22 @@ def run() -> dict:
         counts[row["role_category"]] = row["n"]
     totals["active_counts_by_role_category"] = {category: int(counts.get(category, 0)) for category in CATEGORIES}
     totals["active_jobs_after_run"] = sum(totals["active_counts_by_role_category"].values())
+    city_counts = {}
+    for row in connection.execute(
+        """SELECT city_bucket, COUNT(*) AS all_jobs,
+           SUM(CASE WHEN is_tech=1 THEN 1 ELSE 0 END) AS tech_jobs,
+           SUM(CASE WHEN role_category='Non-Tech' THEN 1 ELSE 0 END) AS non_tech_jobs,
+           SUM(CASE WHEN role_category='Unclassified' THEN 1 ELSE 0 END) AS unclassified_jobs
+           FROM jobs WHERE is_active=1 GROUP BY city_bucket"""
+    ):
+        city_counts[row["city_bucket"]] = {key: int(row[key] or 0) for key in ("all_jobs", "tech_jobs", "non_tech_jobs", "unclassified_jobs")}
+    totals["city_counts"] = city_counts
+    totals["five_city_all_jobs"] = sum(city_counts.get(city, {}).get("all_jobs", 0) for city in CITY_BUCKETS)
+    totals["five_city_tech_jobs"] = sum(city_counts.get(city, {}).get("tech_jobs", 0) for city in CITY_BUCKETS)
     totals["boards_not_fetched"] = totals["errors"]
     connection.close()
     write_summary(totals)
+    write_feasibility_section(totals)
     LOG.info("Aggregate run summary written; raw DB remains at configured private path.")
     return totals
 
