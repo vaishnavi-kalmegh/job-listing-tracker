@@ -73,3 +73,32 @@ If volume is below approximately 300 jobs or any city has no observed entry-leve
 | greenhouse | Modernizing Medicine | modernizingmedicineinc | False | http_error: status=404 | None |
 | greenhouse | Tide | tide | True | ok | 200 |
 | greenhouse | Sony Music Careers Asia Middle East | sonymusicasiacareers | True | ok | 200 |
+
+<!-- TECH_FEASIBILITY_START -->
+## Tech-only feasibility (latest successful collector history)
+
+**Pending live collector run.** Phase 1 established 32 verified boards and 507 jobs across the five city buckets, but the repository does not contain the title-level source data needed to produce defensible tech-only counts. No tech-only volume claim is made until the collector runs against the private database.
+
+| City | All active jobs | Tech-only jobs |
+|---|---:|---:|
+| Pune | Pending | Pending |
+| Hyderabad | Pending | Pending |
+| Bengaluru | Pending | Pending |
+| Delhi NCR | Pending | Pending |
+| Mumbai | Pending | Pending |
+
+### Excluded from analysis
+
+Non-Tech and Unclassified jobs remain in collection history. They are excluded from tech-only analysis and will be counted separately after a successful collector run.
+
+| City/bucket | Non-Tech | Unclassified |
+|---|---:|---:|
+| Pune | Pending | Pending |
+| Hyderabad | Pending | Pending |
+| Bengaluru | Pending | Pending |
+| Delhi NCR | Pending | Pending |
+| Mumbai | Pending | Pending |
+| India - Remote/Other | Pending | Pending |
+| Unclassified | Pending | Pending |
+
+<!-- TECH_FEASIBILITY_END -->
