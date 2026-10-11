@@ -1,0 +1,69 @@
+{
+  "active_counts_by_role_category": {
+    "Data/ML/AI": 123,
+    "DevOps/Cloud/SRE/Infra": 70,
+    "IT Support/Systems": 15,
+    "Non-Tech": 587,
+    "Product/Design (tech-adjacent)": 126,
+    "QA/Test": 24,
+    "Security": 10,
+    "Software Engineering": 182,
+    "Unclassified": 983
+  },
+  "active_jobs_after_run": 2120,
+  "boards_attempted": 32,
+  "boards_fetched": 32,
+  "boards_not_fetched": 0,
+  "changed_jobs": 0,
+  "city_counts": {
+    "Bengaluru": {
+      "all_jobs": 257,
+      "non_tech_jobs": 41,
+      "tech_jobs": 115,
+      "unclassified_jobs": 101
+    },
+    "Delhi NCR": {
+      "all_jobs": 71,
+      "non_tech_jobs": 22,
+      "tech_jobs": 30,
+      "unclassified_jobs": 19
+    },
+    "Hyderabad": {
+      "all_jobs": 111,
+      "non_tech_jobs": 5,
+      "tech_jobs": 49,
+      "unclassified_jobs": 57
+    },
+    "India - Remote/Other": {
+      "all_jobs": 122,
+      "non_tech_jobs": 52,
+      "tech_jobs": 44,
+      "unclassified_jobs": 26
+    },
+    "Mumbai": {
+      "all_jobs": 30,
+      "non_tech_jobs": 10,
+      "tech_jobs": 2,
+      "unclassified_jobs": 18
+    },
+    "Pune": {
+      "all_jobs": 38,
+      "non_tech_jobs": 6,
+      "tech_jobs": 19,
+      "unclassified_jobs": 13
+    },
+    "Unclassified": {
+      "all_jobs": 1491,
+      "non_tech_jobs": 451,
+      "tech_jobs": 291,
+      "unclassified_jobs": 749
+    }
+  },
+  "errors": 0,
+  "five_city_all_jobs": 507,
+  "five_city_tech_jobs": 215,
+  "jobs_seen_this_run": 2120,
+  "new_jobs": 2120,
+  "run_at": "2026-10-11T21:54:40.586068+00:00",
+  "vanished_jobs": 0
+}

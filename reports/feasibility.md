@@ -77,28 +77,30 @@ If volume is below approximately 300 jobs or any city has no observed entry-leve
 <!-- TECH_FEASIBILITY_START -->
 ## Tech-only feasibility (latest successful collector history)
 
-**Pending live collector run.** Phase 1 established 32 verified boards and 507 jobs across the five city buckets, but the repository does not contain the title-level source data needed to produce defensible tech-only counts. No tech-only volume claim is made until the collector runs against the private database.
+- Active jobs across the five cities: **507**.
+- Active tech jobs across the five cities: **215**.
+- Tech-only volume clears approximately 300 jobs: **NO**.
+- Counts below are active records in the private collection database; all roles are collected, and filtering is applied only for analysis.
 
 | City | All active jobs | Tech-only jobs |
 |---|---:|---:|
-| Pune | Pending | Pending |
-| Hyderabad | Pending | Pending |
-| Bengaluru | Pending | Pending |
-| Delhi NCR | Pending | Pending |
-| Mumbai | Pending | Pending |
+| Pune | 38 | 19 |
+| Hyderabad | 111 | 49 |
+| Bengaluru | 257 | 115 |
+| Delhi NCR | 71 | 30 |
+| Mumbai | 30 | 2 |
 
 ### Excluded from analysis
 
-Non-Tech and Unclassified jobs remain in collection history. They are excluded from tech-only analysis and will be counted separately after a successful collector run.
+These records remain in collection history and are excluded from tech-only analysis.
 
 | City/bucket | Non-Tech | Unclassified |
 |---|---:|---:|
-| Pune | Pending | Pending |
-| Hyderabad | Pending | Pending |
-| Bengaluru | Pending | Pending |
-| Delhi NCR | Pending | Pending |
-| Mumbai | Pending | Pending |
-| India - Remote/Other | Pending | Pending |
-| Unclassified | Pending | Pending |
-
+| Pune | 6 | 13 |
+| Hyderabad | 5 | 57 |
+| Bengaluru | 41 | 101 |
+| Delhi NCR | 22 | 19 |
+| Mumbai | 10 | 18 |
+| India - Remote/Other | 52 | 26 |
+| Unclassified | 451 | 749 |
 <!-- TECH_FEASIBILITY_END -->
