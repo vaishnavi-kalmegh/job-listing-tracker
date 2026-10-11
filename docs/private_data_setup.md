@@ -57,3 +57,19 @@ This token allows the public repository's GitHub Actions workflow to write only 
 ## Storage and retention note
 
 The workflow stores the current SQLite database and a dated SQLite snapshot in the private repository. Git history therefore retains prior snapshots. If the database grows substantially, introduce a documented retention/archival policy before deleting historical snapshots; do not delete observations needed for observed_duration or disappearance/return analysis.
+
+
+## 6. Download and label the role-review sample privately
+
+After the first successful collection run, the workflow writes a random sample of up to 30 tech titles and 30 non-tech titles to the **private** repository as role_review.csv. It never commits titles to the public repository.
+
+1. Open https://github.com/vaishnavi-kalmegh/job-listing-data.
+2. Click **role_review.csv**.
+3. Click **Download raw file** (or the download icon if shown) and save the CSV.
+4. Copy the downloaded file into your local clone of job-listing-tracker under reports/role_review.csv. If you do not have a local clone, use GitHub Desktop to clone the public repo first.
+5. Open reports/role_review.csv in Excel or LibreOffice. Fill the review_label column with **tech**, **non-tech**, or **unclassified** based on the title and any department/team context included in the title/row. Do not use job descriptions for role labels.
+6. Save as CSV, keeping the same filename.
+7. In a terminal opened at the public repository folder, run: `python -m discovery.score_role_review --input reports/role_review.csv`.
+8. Precision is only reported for rows you labelled. Do not claim a precision result before this manual review is complete.
+
+Keep the completed CSV private; it contains job titles. Do not upload it to the public repository.
