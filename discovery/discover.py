@@ -116,7 +116,13 @@ def token_evidence_ok(platform: str, token: str, source_url: str) -> bool:
     host = (parsed.hostname or "").lower()
     path_parts = [p for p in parsed.path.split("/") if p]
     if platform == "greenhouse":
-        return host in {"boards.greenhouse.io", "job-boards.greenhouse.io"} and bool(path_parts) and path_parts[0].casefold() == token.casefold()
+        if host not in {"boards.greenhouse.io", "job-boards.greenhouse.io"}:
+            return False
+        if path_parts and path_parts[0].casefold() == token.casefold():
+            return True
+        # Greenhouse also publishes embedded board URLs using ?for=<board_token>.
+        from urllib.parse import parse_qs
+        return parse_qs(parsed.query).get("for", [""])[0].casefold() == token.casefold()
     if platform == "lever":
         return host in {"jobs.lever.co", "jobs.eu.lever.co"} and bool(path_parts) and path_parts[0].casefold() == token.casefold()
     return False
