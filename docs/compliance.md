@@ -36,3 +36,9 @@ A discovery run writes `reports/discovery_run.json` locally. It records timestam
 2. Confirm robots.txt responses and interpret relevant disallow rules for the API paths.
 3. Confirm retention and deletion practices for private raw payloads.
 4. Obtain legal/platform clarification if reuse or public display of derived information is uncertain.
+
+## Collector enforcement added in Phase 2
+
+The collector fetches each API host's robots.txt before its first API request, using the same User-Agent, global request spacing, bounded retries, and host-stop controls. It blocks the API request when the applicable robots rules disallow that URL, and fails closed if the robots policy cannot be fetched reliably. An HTTP 404 for robots.txt is recorded as no machine-readable rules; it is not evidence of legal permission. Current platform terms and any data-reuse restrictions remain a separate review requirement.
+
+The public daily report is aggregate-only. Title-based review samples are gitignored and should be kept locally; the raw SQLite database and dated snapshots belong only in the private data repository.
