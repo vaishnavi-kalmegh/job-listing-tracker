@@ -24,3 +24,19 @@ def test_unknown_is_nullable():
 def test_description_is_not_an_input():
     # The classifier has no description parameter; body text cannot affect labels.
     assert classify_role("Office Coordinator") == ("Unclassified", None)
+
+
+def test_security_operations_analyst_is_tech_not_non_tech():
+    assert classify_role("Security Operations Analyst") == ("Security", True)
+
+
+def test_generic_consultant_uses_technical_department_metadata():
+    assert classify_role("Consultant", "Data Platform", "Analytics Engineering") == ("Data/ML/AI", True)
+
+
+def test_ambiguous_analyst_uses_non_tech_department_metadata():
+    assert classify_role("Analyst", "Finance", "") == ("Non-Tech", False)
+
+
+def test_product_design_remains_a_distinct_tech_adjacent_category():
+    assert classify_role("Product Designer") == ("Product/Design (tech-adjacent)", True)
