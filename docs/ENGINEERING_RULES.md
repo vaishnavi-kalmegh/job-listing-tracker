@@ -17,3 +17,10 @@ These rules are binding. Re-read this file before starting any phase.
 13. Validate API response schemas and pagination/completeness. Preserve records that cannot be normalized in an `Unclassified` bucket; never silently discard them.
 14. Normalize city buckets exactly as documented in `discovery/locations.py`.
 15. Compliance findings and unresolved legal/terms questions must be explicit in `docs/compliance.md`. Do not equate robots.txt permission with legal permission.
+
+16. Collect all roles from every verified Greenhouse/Lever board in the five city buckets plus India - Remote/Other and Unclassified. Never drop a listing because its role category is non-tech or unclear.
+17. Role labels are deterministic and based only on title plus API-provided department/team fields. Never pass description/body text to the role classifier. Persist role_category and nullable is_tech: true for the seven tech/tech-adjacent categories, false for Non-Tech, null for Unclassified. Entry-level is a separate title-based flag, never a collection filter.
+18. Tech-only analysis is a strict filter (is_tech = 1). The repost matcher, its candidate-labeling set, metrics, and dashboard must use tech-only records. Candidate pairs must be blocked within the same underlying company; do not let same-company pairs leak across train/test splits.
+19. Non-Tech and Unclassified records must be counted in a separate "excluded from analysis" table while remaining in collection history. Public reports must be aggregate-only; human review CSVs containing titles stay local/ignored.
+20. Store the raw SQLite database and dated snapshots only in the private data repository. The public repository may contain code, aggregate summaries, and city/category counts, but no raw database, titles, descriptions, job URLs, or per-company fetch errors.
+21. Daily collector summaries must report attempted and successfully fetched boards, errors/incomplete fetches, new and vanished jobs, and active counts by role_category. Failed, blocked, schema-invalid, parsing-invalid, or incomplete snapshots must never mark jobs inactive.
