@@ -1,1 +1,9 @@
 company_name,source_url,greenhouse_token,lever_token,notes
+Mindtickle,https://jobs.lever.co/mindtickle,,mindtickle,Public Lever board URL surfaced by city-specific search; Bengaluru and Pune listings visible
+Acceldata,https://jobs.lever.co/acceldata,,acceldata,Public Lever board URL surfaced by city-specific search; Bengaluru listings visible
+100ms,https://jobs.lever.co/100ms,,100ms,Public Lever board URL surfaced by search; Bengaluru listings visible
+Doxel,https://jobs.lever.co/doxel,,doxel,Public Lever board URL surfaced by city-specific search; Bengaluru listings visible
+Sprinto,https://jobs.lever.co/Sprinto,,Sprinto,Public Lever board URL surfaced by city-specific search; Bengaluru listings visible
+Level AI,https://jobs.lever.co/levelai,,levelai,Public Lever board URL surfaced by city-specific search; Bengaluru and Noida listings visible
+Weekday,https://jobs.lever.co/weekdayworks,,weekdayworks,Public Lever board URL surfaced by city-specific search; Bengaluru and Delhi/Noida listings visible
+Cialfo,https://boards.greenhouse.io/embed/job_board?for=cialfo,cialfo,,Public Greenhouse embedded board URL; Delhi NCR and Mumbai listings visible
