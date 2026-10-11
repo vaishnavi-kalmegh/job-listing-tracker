@@ -11,6 +11,8 @@ ROOT = Path(__file__).resolve().parents[1]
 RUN_LOG = ROOT / "reports" / "discovery_run.json"
 OUTPUT = ROOT / "reports" / "feasibility.md"
 CITIES = ("Pune", "Hyderabad", "Bengaluru", "Delhi NCR", "Mumbai")
+# Owner-provided baseline from the prior run; retained explicitly for comparison.
+BASELINE = {"verified_boards": 8, "target_city_jobs": 117, "entry_level_jobs": 12, "Pune_entry_level": 0, "Hyderabad_jobs": 0}
 
 
 def main() -> None:
@@ -49,6 +51,15 @@ def main() -> None:
         f"- **API probes attempted:** {run.get('probes_attempted', 0)}.",
         f"- **Failed, blocked, invalid, or incomplete probes:** {len(failures)}.",
         f"- **Feasibility decision:** {decision}", "",
+        "## Before vs after expansion", "",
+        "| Metric | Before Phase 1b (owner-provided) | After Phase 1b (this run) |",
+        "|---|---:|---:|",
+        f"| Verified boards | {BASELINE['verified_boards']} | {len(verified)} |",
+        f"| Jobs in five target cities | {BASELINE['target_city_jobs']} | {city_total} |",
+        f"| Estimated entry-level jobs | {BASELINE['entry_level_jobs']} | {entry_total} |",
+        f"| Pune entry-level jobs | {BASELINE['Pune_entry_level']} | {entry['Pune']} |",
+        f"| Hyderabad jobs | {BASELINE['Hyderabad_jobs']} | {totals['Hyderabad']} |",
+        "",
         "| City | Jobs | Entry-level estimate |",
         "|---|---:|---:|",
     ]
