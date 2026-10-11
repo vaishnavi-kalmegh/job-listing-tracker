@@ -29,7 +29,7 @@ NON_TECH = re.compile(
 )
 RULES: tuple[tuple[str, re.Pattern[str]], ...] = (
     ("Security", re.compile(r"\b(security engineer|security operations|application security|appsec|cyber ?security|infosec|soc analyst|security analyst|penetration test|pentest|vulnerability|iam engineer|identity and access management|grc analyst|security architect)\b", re.I)),
-    ("QA/Test", re.compile(r"\b(qa engineer|qa analyst|quality assurance|quality analyst|software tester|test engineer|test analyst|test automation|automation tester|sdet|manual tester|performance tester|validation engineer)\\b", re.I)),
+    ("QA/Test", re.compile(r"\b(qa engineer|qa analyst|quality assurance|quality analyst|software tester|test engineer|test analyst|test automation|automation tester|sdet|manual tester|performance tester|validation engineer)\b", re.I)),
     ("DevOps/Cloud/SRE/Infra", re.compile(r"\b(devops|site reliability|\bsre\b|cloud engineer|cloud architect|platform engineer|infrastructure engineer|systems engineer|kubernetes|network engineer|database administrator|\bdba\b|release engineer|build engineer|production engineer)\\b", re.I)),
     ("Data/ML/AI", re.compile(r"\b(data scientist|data engineer|data analyst|analytics engineer|machine learning|\bml engineer|\bai engineer|artificial intelligence|deep learning|nlp engineer|computer vision|research scientist|bi engineer|business intelligence developer|statistician)\\b", re.I)),
     ("Product/Design (tech-adjacent)", re.compile(r"\b(product manager|technical product manager|product owner|ux designer|ui designer|product designer|ux researcher|user experience|user interface|interaction designer|design systems|technical writer|solutions architect|solutions engineer)\\b", re.I)),
