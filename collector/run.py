@@ -53,15 +53,24 @@ def write_feasibility_section(summary: dict) -> None:
         f"- Active tech jobs across the five cities: **{summary['five_city_tech_jobs']}**.",
         f"- Tech-only volume clears approximately 300 jobs: **{'YES' if summary['five_city_tech_jobs'] >= 300 else 'NO'}**.",
         "- Counts below are active records in the private collection database; all roles are collected, and filtering is applied only for analysis.", "",
-        "| City | All active jobs | Tech-only jobs |", "|---|---:|---:|",
+        "| City | All active jobs | Tech-only jobs | Product/Design tag |", "|---|---:|---:|---:|",
     ]
     for city in CITY_BUCKETS:
         row = summary["city_counts"].get(city, {})
-        section.append(f"| {city} | {row.get('all_jobs', 0)} | {row.get('tech_jobs', 0)} |")
+        section.append(f"| {city} | {row.get('all_jobs', 0)} | {row.get('tech_jobs', 0)} | {row.get('product_design_jobs', 0)} |")
+    section += [
+        "", "### All active jobs by location bucket and is_tech", "",
+        "The is_tech field is true for technical roles and Product/Design (tech-adjacent), false for Non-Tech, and null for Unclassified roles. Product/Design remains separately counted and can be included or excluded downstream.", "",
+        "| Location bucket | All active jobs | is_tech = true | is_tech = false | is_tech = null | Product/Design |",
+        "|---|---:|---:|---:|---:|---:|",
+    ]
+    for bucket in (*CITY_BUCKETS, *EXTRA_BUCKETS):
+        row = summary["city_counts"].get(bucket, {})
+        section.append(f"| {bucket} | {row.get('all_jobs', 0)} | {row.get('is_tech_true', 0)} | {row.get('is_tech_false', 0)} | {row.get('is_tech_null', 0)} | {row.get('product_design_jobs', 0)} |")
     section += [
         "", "### Excluded from analysis", "",
         "These records remain in collection history and are excluded from tech-only analysis.", "",
-        "| City/bucket | Non-Tech | Unclassified |", "|---|---:|---:|",
+        "| Location bucket | Non-Tech | Unclassified |", "|---|---:|---:|",
     ]
     for city in (*CITY_BUCKETS, *EXTRA_BUCKETS):
         row = summary["city_counts"].get(city, {})
@@ -150,11 +159,18 @@ def run() -> dict:
     for row in connection.execute(
         """SELECT city_bucket, COUNT(*) AS all_jobs,
            SUM(CASE WHEN is_tech=1 THEN 1 ELSE 0 END) AS tech_jobs,
+           SUM(CASE WHEN is_tech=1 THEN 1 ELSE 0 END) AS is_tech_true,
+           SUM(CASE WHEN is_tech=0 THEN 1 ELSE 0 END) AS is_tech_false,
+           SUM(CASE WHEN is_tech IS NULL THEN 1 ELSE 0 END) AS is_tech_null,
+           SUM(CASE WHEN role_category='Product/Design (tech-adjacent)' THEN 1 ELSE 0 END) AS product_design_jobs,
            SUM(CASE WHEN role_category='Non-Tech' THEN 1 ELSE 0 END) AS non_tech_jobs,
            SUM(CASE WHEN role_category='Unclassified' THEN 1 ELSE 0 END) AS unclassified_jobs
            FROM jobs WHERE is_active=1 GROUP BY city_bucket"""
     ):
-        city_counts[row["city_bucket"]] = {key: int(row[key] or 0) for key in ("all_jobs", "tech_jobs", "non_tech_jobs", "unclassified_jobs")}
+        city_counts[row["city_bucket"]] = {key: int(row[key] or 0) for key in (
+            "all_jobs", "tech_jobs", "is_tech_true", "is_tech_false", "is_tech_null",
+            "product_design_jobs", "non_tech_jobs", "unclassified_jobs"
+        )}
     totals["city_counts"] = city_counts
     totals["five_city_all_jobs"] = sum(city_counts.get(city, {}).get("all_jobs", 0) for city in CITY_BUCKETS)
     totals["five_city_tech_jobs"] = sum(city_counts.get(city, {}).get("tech_jobs", 0) for city in CITY_BUCKETS)
