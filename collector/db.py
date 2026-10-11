@@ -40,8 +40,8 @@ CREATE TABLE IF NOT EXISTS collection_runs (
 );
 """
 
-ENTRY_INCLUDE = re.compile(r"\\b(fresher|junior|associate|graduate|intern(ship)?|entry[- ]level|trainee|0\\s*[-–to]+\\s*2\\s+years?)\\b", re.I)
-ENTRY_EXCLUDE = re.compile(r"\\b(senior|sr\\.?|lead|principal|manager|director|head of|staff engineer)\\b", re.I)
+ENTRY_INCLUDE = re.compile(r"\b(fresher|junior|associate|graduate|intern(ship)?|entry[- ]level|trainee|0\s*[-–to]+\s*2\s+years?)\b", re.I)
+ENTRY_EXCLUDE = re.compile(r"\b(senior|sr\\.?|lead|principal|manager|director|head of|staff engineer)\b", re.I)
 
 
 def utc_now() -> str:
