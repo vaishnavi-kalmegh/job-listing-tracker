@@ -1,9 +1,35 @@
 company_name,source_url,greenhouse_token,lever_token,notes
-Mindtickle,https://jobs.lever.co/mindtickle,,mindtickle,Public Lever board URL surfaced by city-specific search; Bengaluru and Pune listings visible
-Acceldata,https://jobs.lever.co/acceldata,,acceldata,Public Lever board URL surfaced by city-specific search; Bengaluru listings visible
-100ms,https://jobs.lever.co/100ms,,100ms,Public Lever board URL surfaced by search; Bengaluru listings visible
-Doxel,https://jobs.lever.co/doxel,,doxel,Public Lever board URL surfaced by city-specific search; Bengaluru listings visible
-Sprinto,https://jobs.lever.co/Sprinto,,Sprinto,Public Lever board URL surfaced by city-specific search; Bengaluru listings visible
-Level AI,https://jobs.lever.co/levelai,,levelai,Public Lever board URL surfaced by city-specific search; Bengaluru and Noida listings visible
-Weekday,https://jobs.lever.co/weekdayworks,,weekdayworks,Public Lever board URL surfaced by city-specific search; Bengaluru and Delhi/Noida listings visible
-Cialfo,https://boards.greenhouse.io/embed/job_board?for=cialfo,cialfo,,Public Greenhouse embedded board URL; Delhi NCR and Mumbai listings visible
+Mindtickle,https://jobs.lever.co/mindtickle,,mindtickle,Public board page surfaced by search; Pune and Bengaluru locations shown
+Acceldata,https://jobs.lever.co/acceldata,,acceldata,Public board URL recorded in prior seed list; verify API response
+100ms,https://jobs.lever.co/100ms,,100ms,Public board URL recorded in prior seed list; verify API response
+Doxel,https://jobs.lever.co/doxel,,doxel,Public board URL recorded in prior seed list; verify API response
+Sprinto,https://jobs.lever.co/Sprinto,,Sprinto,Public board URL recorded in prior seed list; verify API response
+Level AI,https://jobs.lever.co/levelai,,levelai,Public board URL recorded in prior seed list; verify API response
+Weekday,https://jobs.lever.co/weekdayworks,,weekdayworks,Public board URL recorded in prior seed list; verify API response
+Cialfo,https://boards.greenhouse.io/embed/job_board?for=cialfo,cialfo,,Public Greenhouse embedded board; Delhi NCR and Mumbai listings shown
+Cprime,https://jobs.lever.co/cprime,,cprime,Search result shows Hyderabad roles
+Dun & Bradstreet,https://jobs.lever.co/dnb,,dnb,Search result shows Hyderabad roles
+Sonatype,https://jobs.lever.co/sonatype,,sonatype,Search result shows Hyderabad roles
+Matillion,https://jobs.lever.co/matillion,,matillion,Search result shows Hyderabad roles
+Brillio,https://jobs.lever.co/brillio-2,,brillio-2,Search results show Pune Hyderabad and Bengaluru roles
+Veeva Systems,https://jobs.lever.co/veeva,,veeva,Search results show Hyderabad roles
+Entrata,https://jobs.lever.co/entrata,,entrata,Search result shows Pune role
+Allata,https://jobs.lever.co/Allata,,Allata,Search results show Pune roles
+Perforce,https://jobs.lever.co/perforce,,perforce,Search results show Pune roles
+Coupa,https://jobs.lever.co/coupa,,coupa,Search results show Pune roles
+FloQast,https://jobs.lever.co/floqast,,floqast,Search result shows Pune roles
+Smart Working Solutions,https://jobs.lever.co/smart-working-solutions,,smart-working-solutions,Search result lists Pune and Hyderabad remote locations
+Resilinc,https://jobs.lever.co/resilinc,,resilinc,Search result shows Pune and India remote roles
+ION Group,https://jobs.lever.co/ion,,ion,Search result shows graduate program across Pune Mumbai and Noida
+BlueMatrix,https://jobs.lever.co/BlueMatrix,,BlueMatrix,Search result shows Hyderabad roles
+Keyloop,https://jobs.lever.co/keyloop,,keyloop,Search result shows Hyderabad roles
+Egen,https://jobs.lever.co/egen,,egen,Search result shows Hyderabad roles
+ValGenesis,https://jobs.lever.co/valgenesis,,valgenesis,Search result shows Hyderabad and Bengaluru roles
+Zeta,https://jobs.lever.co/zeta,,zeta,Search result shows Hyderabad roles
+Outreach,https://jobs.lever.co/outreach,,outreach,Search result shows Hyderabad roles
+Omni Design Technologies,https://jobs.lever.co/omnidesigntech,,omnidesigntech,Search result shows Hyderabad and Bengaluru roles
+JumpCloud,https://jobs.lever.co/jumpcloud,,jumpcloud,Search result shows India remote roles across target cities
+Berkadia India,https://boards.greenhouse.io/embed/job_board?for=berkadiaindia,berkadiaindia,,Public Greenhouse embedded board; Hyderabad listings shown
+Modernizing Medicine,https://boards.greenhouse.io/embed/job_app?for=modernizingmedicineinc&token=7618097002,modernizingmedicineinc,,Public Greenhouse application URL evidences board token; Hyderabad listing shown
+Tide,https://boards.greenhouse.io/embed/job_app?for=tide&token=5993510003,tide,,Public Greenhouse application URL evidences board token; India remote listing shown
+Sony Music Careers Asia Middle East,https://boards.greenhouse.io/embed/job_board?for=sonymusicasiacareers,sonymusicasiacareers,,Public Greenhouse embedded board; India roles shown
