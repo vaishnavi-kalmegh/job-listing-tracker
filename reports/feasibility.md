@@ -1,32 +1,39 @@
 # Phase 1 feasibility report
 
-**Status: NOT YET MEASURED — live discovery has not been run from this repository environment.**
+Generated from local discovery run at 2026-10-11T20:21:23.834707+00:00.
+All counts below are derived from verified, complete API responses in this run.
 
-No board verification totals or job-volume metrics are claimed in this initial report. The checked-in `data/boards.csv` currently contains only its header, so it is not evidence that zero boards exist; it means no live verification run has populated the file yet.
+- **Verified boards:** 8 (valid zero-job boards count as verified).
+- **Jobs in the five target cities:** 117.
+- **Entry-level jobs across the five cities:** 12.
+- **API probes attempted:** 8.
+- **Failed, blocked, invalid, or incomplete probes:** 0.
+- **Feasibility decision:** Feasibility concern: do not proceed automatically; review source strategy and coverage.
 
-Run:
+| City | Jobs | Entry-level estimate |
+|---|---:|---:|
+| Pune | 13 | 0 |
+| Hyderabad | 0 | 0 |
+| Bengaluru | 70 | 9 |
+| Delhi NCR | 27 | 1 |
+| Mumbai | 7 | 2 |
 
-```bash
-python -m pip install -r requirements.txt
-python -m discovery.discover --max-probes 60
-```
+## Interpretation
 
-Then regenerate this report from the saved local run output:
+Entry-level counts are heuristic estimates based on titles and descriptions; they are not a verified seniority field.
+A board probe that fails, is blocked, returns invalid JSON, or cannot be completely paginated is not treated as a verified zero-job board.
+This report uses target-city counts only. India - Remote/Other and Unclassified are kept separate and are not counted toward the five-city threshold.
+If volume is below approximately 300 jobs or any city has no observed entry-level roles, expand evidence-backed candidate sources and manually inspect more public board URLs. Do not brute-force tokens.
 
-```bash
-python -m discovery.report
-```
+## Probe outcomes
 
-## Required findings
-
-The generated report will state:
-- Number of verified boards, including valid boards that currently return zero jobs.
-- Total observed jobs in the five target cities.
-- Entry-level estimates by city.
-- Separate India - Remote/Other and Unclassified counts.
-- Failed, blocked, and incomplete probes, kept distinct from verified boards.
-- Whether the dataset clears the approximate 300-job feasibility threshold and whether city/entry-level coverage is badly skewed.
-
-## Decision rule
-
-Continue only if observed volume and city/entry-level balance are adequate. If fewer than about 300 jobs occur across the five cities, or entry-level opportunities are badly skewed, report that the feasibility gate has failed and revise candidate sourcing rather than concealing the gap. A successful API response with an empty jobs list is a verified board with zero jobs; a timeout, 403/429, invalid JSON, or malformed response is not a zero-job result.
+| Platform | Company | Token | Verified | Status | HTTP |
+|---|---|---|---|---|---:|
+| lever | Mindtickle | mindtickle | True | ok | 200 |
+| lever | Acceldata | acceldata | True | ok | 200 |
+| lever | 100ms | 100ms | True | ok | 200 |
+| lever | Doxel | doxel | True | ok | 200 |
+| lever | Sprinto | Sprinto | True | ok | 200 |
+| lever | Level AI | levelai | True | ok | 200 |
+| lever | Weekday | weekdayworks | True | ok | 200 |
+| greenhouse | Cialfo | cialfo | True | ok | 200 |
