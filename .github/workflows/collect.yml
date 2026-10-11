@@ -57,6 +57,9 @@ jobs:
       - name: Collect all roles and produce aggregate reports
         run: python -m collector.run
 
+      - name: Generate private human-review sample
+        run: python -m discovery.sample_role_review --output private-data/role_review.csv
+
       - name: Commit private database snapshot
         shell: bash
         run: |
