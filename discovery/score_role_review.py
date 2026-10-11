@@ -1,6 +1,7 @@
 """Report precision for tech and non-tech predictions after human review."""
 from __future__ import annotations
 
+import argparse
 import csv
 from pathlib import Path
 
@@ -20,9 +21,12 @@ def normalized(value: str) -> str:
 
 
 def main() -> None:
-    if not INPUT.exists():
-        raise SystemExit(f"Review file not found: {INPUT}. Run python -m discovery.sample_role_review first.")
-    with INPUT.open(encoding="utf-8-sig", newline="") as handle:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--input", type=Path, default=INPUT)
+    args = parser.parse_args()
+    if not args.input.exists():
+        raise SystemExit(f"Review file not found: {args.input}. Download the private role_review.csv or run python -m discovery.sample_role_review first.")
+    with args.input.open(encoding="utf-8-sig", newline="") as handle:
         rows = list(csv.DictReader(handle))
     labelled = [r for r in rows if normalized(r.get("review_label", ""))]
     print(f"Human-labelled rows: {len(labelled)} / {len(rows)}")
