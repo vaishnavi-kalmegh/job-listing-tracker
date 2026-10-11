@@ -30,7 +30,7 @@ All counts below are derived from verified, complete API responses in this run.
 
 ## Interpretation
 
-Entry-level counts are heuristic estimates based on titles and descriptions; they are not a verified seniority field.
+The Phase 1 entry-level counts above are historical heuristic estimates, not a verified seniority field. Phase 2 stores entry_level as a title-based flag only; it never filters collection.
 A board probe that fails, is blocked, returns invalid JSON, or cannot be completely paginated is not treated as a verified zero-job board.
 This report uses target-city counts only. India - Remote/Other and Unclassified are kept separate and are not counted toward the five-city threshold.
 If volume is below approximately 300 jobs or any city has no observed entry-level roles, expand evidence-backed candidate sources and manually inspect more public board URLs. Do not brute-force tokens.
