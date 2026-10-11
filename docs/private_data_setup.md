@@ -73,3 +73,17 @@ After the first successful collection run, the workflow writes a random sample o
 8. Precision is only reported for rows you labelled. Do not claim a precision result before this manual review is complete.
 
 Keep the completed CSV private; it contains job titles. Do not upload it to the public repository.
+
+
+## 7. Review the 50 Unclassified titles privately
+
+The next manual or scheduled collector run first exports up to 50 random active listings that were Unclassified before the updated rules are applied. The CSV includes title, department, team, location bucket, company token, and a blank review_label/review_notes field. It is committed only to the private data repository as unclassified_review.csv.
+
+1. Open https://github.com/vaishnavi-kalmegh/job-listing-data.
+2. Open unclassified_review.csv and click **Download raw file**.
+3. Review the title plus department/team fields. Do not use descriptions.
+4. Fill review_label with one of the documented role categories: Software Engineering; Data/ML/AI; DevOps/Cloud/SRE/Infra; QA/Test; Security; IT Support/Systems; Product/Design (tech-adjacent); Non-Tech; or Unclassified.
+5. Use review_notes for a short explanation of ambiguous titles. Keep the completed file private; do not commit it to job-listing-tracker.
+6. The updated collector writes the new active counts by role_category and location/is_tech into the public aggregate reports. It does not include titles or per-company details.
+
+The export is generated before the collector opens/migrates the existing database, so the initial sample reflects the prior Unclassified labels rather than being silently changed by the new rules. If the private CSV already exists, the workflow preserves it rather than overwriting your annotations.
