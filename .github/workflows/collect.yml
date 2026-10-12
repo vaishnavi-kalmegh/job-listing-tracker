@@ -65,14 +65,28 @@ jobs:
             echo "No prior database exists; export will be attempted after the first collection."
           fi
 
+      - name: Export Unparsed location strings to private repository
+        shell: bash
+        run: |
+          if [ -f private-data/unparsed_location_review.csv ]; then
+            echo "Preserving existing private location review sample."
+          elif [ -f "$JOB_TRACKER_DB" ]; then
+            python -m discovery.sample_unparsed_locations --db "$JOB_TRACKER_DB" --output private-data/unparsed_location_review.csv --sample-size 40
+          else
+            echo "No prior database exists; location export will be attempted after the first collection."
+          fi
+
       - name: Collect all roles and produce aggregate reports
         run: python -m collector.run
 
-      - name: Export remaining Unclassified sample if needed
+      - name: Export remaining review samples if needed
         shell: bash
         run: |
           if [ ! -f private-data/unclassified_review.csv ]; then
             python -m discovery.sample_unclassified_review --db "$JOB_TRACKER_DB" --output private-data/unclassified_review.csv --sample-size 50
+          fi
+          if [ ! -f private-data/unparsed_location_review.csv ]; then
+            python -m discovery.sample_unparsed_locations --db "$JOB_TRACKER_DB" --output private-data/unparsed_location_review.csv --sample-size 40
           fi
 
       - name: Generate private human-review sample if not already present
@@ -92,7 +106,7 @@ jobs:
           cp "$JOB_TRACKER_DB" "private-data/snapshots/jobs-$(date -u +%F).sqlite3"
           git -C private-data config user.name "github-actions[bot]"
           git -C private-data config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git -C private-data add jobs.db run_summary.json role_review.csv unclassified_review.csv snapshots/
+          git -C private-data add jobs.db run_summary.json role_review.csv unclassified_review.csv unparsed_location_review.csv snapshots/
           if ! git -C private-data diff --cached --quiet; then
             git -C private-data commit -m "Daily job snapshot $(date -u +%F)"
             git -C private-data push
