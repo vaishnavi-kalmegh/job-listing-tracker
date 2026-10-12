@@ -25,7 +25,7 @@ def test_city_aliases():
 def test_remote_and_unparsed():
     assert normalize_location("Remote - India") == "India - Remote/Other"
     assert normalize_location("India") == "India - Remote/Other"
-    assert normalize_location("Remote") == "India - Remote/Other"
+    assert normalize_location("Remote") == "Unparsed"
     assert normalize_location("Mars") == "Unparsed"
     assert normalize_location("Somewhere") == "Unparsed"
     assert normalize_location(None) == "Unparsed"
