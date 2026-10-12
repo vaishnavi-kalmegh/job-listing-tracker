@@ -32,7 +32,6 @@ REMOTE_PATTERNS = (
     r"\bremote\s*[-:]?\s*india\b",
     r"\banywhere in india\b",
 )
-REMOTE_WORDS = (r"\bremote\b", r"\bwork from anywhere\b")
 
 # These signals are deliberately explicit. A vague or unknown place stays Unparsed;
 # do not guess a country from abbreviations that can also be ordinary words.
@@ -93,6 +92,4 @@ def normalize_location(location: str | None) -> str:
     if any(re.search(pattern, value) for pattern in OUTSIDE_INDIA_CITIES):
         return "Outside India"
 
-    if any(re.search(pattern, value) for pattern in REMOTE_WORDS):
-        return "India - Remote/Other"
     return "Unparsed"
