@@ -8,6 +8,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from discovery.locations import normalize_location
 from discovery.roles import classify_role
 
 SCHEMA = """
@@ -57,7 +58,7 @@ def connect(path: Path) -> sqlite3.Connection:
     connection = sqlite3.connect(path)
     connection.row_factory = sqlite3.Row
     connection.executescript(SCHEMA)
-    # Forward-only migration for DBs created by the earlier Phase 2 scaffold.
+    # Forward-only migration for DBs created by earlier Phase 2 versions.
     columns = {row["name"] for row in connection.execute("PRAGMA table_info(jobs)")}
     migrations = {
         "department": "TEXT NOT NULL DEFAULT ''",
@@ -69,14 +70,19 @@ def connect(path: Path) -> sqlite3.Connection:
     for name, sql_type in migrations.items():
         if name not in columns:
             connection.execute(f"ALTER TABLE jobs ADD COLUMN {name} {sql_type}")
-    # Recompute labels for existing rows from title only; descriptions are never passed.
-    for row in connection.execute("SELECT platform,token,job_id,title,department,team FROM jobs").fetchall():
+    # Recompute labels and location buckets from title/metadata and raw location.
+    # Description/body text is deliberately not an input to either classifier.
+    for row in connection.execute(
+        "SELECT platform,token,job_id,title,department,team,location_raw FROM jobs"
+    ).fetchall():
         category, is_tech = classify_role(row["title"], row["department"], row["team"])
+        city_bucket = normalize_location(row["location_raw"])
         connection.execute(
-            "UPDATE jobs SET role_category=?,is_tech=?,entry_level=? WHERE platform=? AND token=? AND job_id=?",
+            """UPDATE jobs SET role_category=?,is_tech=?,entry_level=?,city_bucket=?
+               WHERE platform=? AND token=? AND job_id=?""",
             (category, None if is_tech is None else int(is_tech),
              int(bool(ENTRY_INCLUDE.search(row["title"])) and not bool(ENTRY_EXCLUDE.search(row["title"]))),
-             row["platform"], row["token"], row["job_id"]),
+             city_bucket, row["platform"], row["token"], row["job_id"]),
         )
     connection.commit()
     return connection
