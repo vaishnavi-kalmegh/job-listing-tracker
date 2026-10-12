@@ -25,3 +25,4 @@ reports/entry_level_review.csv
 
 # Private human-review exports contain job titles and metadata
 reports/unclassified_review.csv
+reports/unparsed_location_review.csv
