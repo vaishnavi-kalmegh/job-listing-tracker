@@ -87,3 +87,16 @@ The next manual or scheduled collector run first exports up to 50 random active 
 6. The updated collector writes the new active counts by role_category and location/is_tech into the public aggregate reports. It does not include titles or per-company details.
 
 The export is generated before the collector opens/migrates the existing database, so the initial sample reflects the prior Unclassified labels rather than being silently changed by the new rules. If the private CSV already exists, the workflow preserves it rather than overwriting your annotations.
+
+
+## 8. Review the 40 Unparsed location strings privately
+
+The collector now distinguishes **Outside India** from **Unparsed**. It recognizes the requested Indian suburb aliases, exports up to 40 random distinct raw location strings that remain Unparsed, and stores the CSV only in the private `job-listing-data` repository as `unparsed_location_review.csv`.
+
+1. Open https://github.com/vaishnavi-kalmegh/job-listing-data.
+2. Open `unparsed_location_review.csv` and download it.
+3. Review each `location_raw` value and fill `review_label` with a known city bucket, `India - Remote/Other`, `Outside India`, or `Unparsed`.
+4. Add a short explanation in `review_notes` if a value is ambiguous.
+5. Keep the completed CSV private. The workflow preserves an existing review file and does not overwrite your labels.
+
+The location export contains raw location strings only, not job titles or descriptions. The public repository receives aggregate location/is_tech counts only.
