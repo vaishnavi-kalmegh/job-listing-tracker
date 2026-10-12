@@ -75,45 +75,46 @@ If volume is below approximately 300 jobs or any city has no observed entry-leve
 | greenhouse | Sony Music Careers Asia Middle East | sonymusicasiacareers | True | ok | 200 |
 
 <!-- TECH_FEASIBILITY_START -->
-## Tech-only feasibility (latest collector run before expanded role rules)
+## Tech-only feasibility (latest successful collector history)
 
-**Baseline run:** 2026-10-11 21:54 UTC. All 32/32 boards completed, with 2,120 active listings. This section is the measured pre-rule-expansion baseline; the updated rules require a new collector run before revised counts can be claimed.
+- Active jobs across the five cities: **505**.
+- Active tech jobs across the five cities: **246**.
+- Tech-only volume clears approximately 300 jobs: **NO**.
+- Counts below are active records in the private collection database; all roles are collected, and filtering is applied only for analysis.
 
-- Active jobs across the five cities: **507**.
-- Active tech jobs across the five cities: **215** (Product/Design tech-adjacent is currently included in this count).
-- Tech-only volume in the five cities clears approximately 300 jobs: **NO**.
-- The 2,120 total includes all active jobs across the five city buckets plus India - Remote/Other and Unclassified location. It does not mean 2,120 jobs are physically in the five cities.
-- Phase 1's 507 count was the five-city-only subset at the earlier discovery snapshot; the Phase 2 count of 507 five-city jobs happens to match that baseline in this run. Phase 2 additionally retains 1,613 listings outside those five city buckets.
+| City | All active jobs | Tech-only jobs | Product/Design tag |
+|---|---:|---:|---:|
+| Pune | 38 | 19 | 2 |
+| Hyderabad | 113 | 72 | 3 |
+| Bengaluru | 254 | 119 | 15 |
+| Delhi NCR | 70 | 33 | 2 |
+| Mumbai | 30 | 3 | 0 |
 
-### Active jobs by location bucket and is_tech
+### All active jobs by location bucket and is_tech
 
-**is_tech = true** includes the seven tech categories, including the separate Product/Design (tech-adjacent) category. **false** means Non-Tech; **null** means role Unclassified.
+The is_tech field is true for technical roles and Product/Design (tech-adjacent), false for Non-Tech, and null for Unclassified roles. Product/Design remains separately counted and can be included or excluded downstream.
 
-| Location bucket | All active jobs | is_tech = true | is_tech = false | is_tech = null |
-|---|---:|---:|---:|---:|
-| Pune | 38 | 19 | 6 | 13 |
-| Hyderabad | 111 | 49 | 5 | 57 |
-| Bengaluru | 257 | 115 | 41 | 101 |
-| Delhi NCR | 71 | 30 | 22 | 19 |
-| Mumbai | 30 | 2 | 10 | 18 |
-| India - Remote/Other | 122 | 44 | 52 | 26 |
-| Unclassified location | 1,491 | 291 | 451 | 749 |
-| **Total** | **2,120** | **550** | **587** | **983** |
+| Location bucket | All active jobs | is_tech = true | is_tech = false | is_tech = null | Product/Design |
+|---|---:|---:|---:|---:|---:|
+| Pune | 38 | 19 | 6 | 13 | 2 |
+| Hyderabad | 113 | 72 | 3 | 38 | 3 |
+| Bengaluru | 254 | 119 | 39 | 96 | 15 |
+| Delhi NCR | 70 | 33 | 20 | 17 | 2 |
+| Mumbai | 30 | 3 | 11 | 16 | 0 |
+| India - Remote/Other | 121 | 46 | 51 | 24 | 2 |
+| Unclassified | 1492 | 400 | 446 | 646 | 143 |
 
-### Product/Design remains a separate tag
+### Excluded from analysis
 
-**Product/Design (tech-adjacent)** remains a distinct role_category, with **126 active listings** in the baseline run. It is currently included in is_tech = true because it is tech-adjacent, but downstream analysis can exclude this category explicitly. The updated collector report will break Product/Design counts out by location bucket after the next successful run.
+These records remain in collection history and are excluded from tech-only analysis.
 
-### Excluded from tech-only analysis
-
-These records remain in collection history. Non-Tech and Unclassified roles are excluded from strict tech-only analysis.
-
-| Exclusion | Active listings |
-|---|---:|
-| Non-Tech | 587 |
-| Unclassified role | 983 |
-
-### Expanded role-rule update status
-
-The title/department/team rules have been broadened without using descriptions. **The post-update Unclassified count is not yet verified**: it will be calculated from the private database on the next successful manual/daily collector run. The previous count of 983 is the pre-update baseline and must not be presented as the new count.
+| Location bucket | Non-Tech | Unclassified |
+|---|---:|---:|
+| Pune | 6 | 13 |
+| Hyderabad | 3 | 38 |
+| Bengaluru | 39 | 96 |
+| Delhi NCR | 20 | 17 |
+| Mumbai | 11 | 16 |
+| India - Remote/Other | 51 | 24 |
+| Unclassified | 446 | 646 |
 <!-- TECH_FEASIBILITY_END -->
