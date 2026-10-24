@@ -78,15 +78,15 @@ If volume is below approximately 300 jobs or any city has no observed entry-leve
 ## Tech-only feasibility (latest successful collector history)
 
 - Active jobs across the five cities: **501**.
-- Active tech jobs across the five cities: **238**.
+- Active tech jobs across the five cities: **237**.
 - Tech-only volume clears approximately 300 jobs: **NO**.
 - Existing active listings moved from non-city buckets into the five cities by the updated location rules: **0**, including **0 tech jobs**.
 - Counts below are active records in the private collection database; all roles are collected, and filtering is applied only for analysis.
 
 | City | All active jobs | Tech-only jobs | Product/Design tag |
 |---|---:|---:|---:|
-| Pune | 38 | 14 | 2 |
-| Hyderabad | 124 | 72 | 3 |
+| Pune | 40 | 14 | 2 |
+| Hyderabad | 122 | 71 | 3 |
 | Bengaluru | 248 | 121 | 14 |
 | Delhi NCR | 59 | 28 | 2 |
 | Mumbai | 32 | 3 | 0 |
@@ -97,12 +97,12 @@ The is_tech field is true for technical roles and Product/Design (tech-adjacent)
 
 | Location bucket | All active jobs | is_tech = true | is_tech = false | is_tech = null | Product/Design |
 |---|---:|---:|---:|---:|---:|
-| Pune | 38 | 14 | 8 | 16 | 2 |
-| Hyderabad | 124 | 72 | 5 | 47 | 3 |
+| Pune | 40 | 14 | 9 | 17 | 2 |
+| Hyderabad | 122 | 71 | 5 | 46 | 3 |
 | Bengaluru | 248 | 121 | 40 | 87 | 14 |
 | Delhi NCR | 59 | 28 | 19 | 12 | 2 |
 | Mumbai | 32 | 3 | 15 | 14 | 0 |
-| India - Remote/Other | 50 | 20 | 15 | 15 | 0 |
+| India - Remote/Other | 52 | 20 | 17 | 15 | 0 |
 | Outside India | 1190 | 309 | 376 | 505 | 124 |
 | Unparsed | 331 | 116 | 82 | 133 | 23 |
 
@@ -112,12 +112,12 @@ These records remain in collection history and are excluded from tech-only analy
 
 | Location bucket | Non-Tech | Unclassified role |
 |---|---:|---:|
-| Pune | 8 | 16 |
-| Hyderabad | 5 | 47 |
+| Pune | 9 | 17 |
+| Hyderabad | 5 | 46 |
 | Bengaluru | 40 | 87 |
 | Delhi NCR | 19 | 12 |
 | Mumbai | 15 | 14 |
-| India - Remote/Other | 15 | 15 |
+| India - Remote/Other | 17 | 15 |
 | Outside India | 376 | 505 |
 | Unparsed | 82 | 133 |
 <!-- TECH_FEASIBILITY_END -->

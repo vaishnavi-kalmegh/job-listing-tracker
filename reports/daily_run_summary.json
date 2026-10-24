@@ -3,18 +3,18 @@
     "Data/ML/AI": 143,
     "DevOps/Cloud/SRE/Infra": 71,
     "IT Support/Systems": 31,
-    "Non-Tech": 560,
+    "Non-Tech": 563,
     "Product/Design (tech-adjacent)": 168,
-    "QA/Test": 29,
+    "QA/Test": 28,
     "Security": 27,
     "Software Engineering": 214,
     "Unclassified": 829
   },
-  "active_jobs_after_run": 2072,
+  "active_jobs_after_run": 2074,
   "boards_attempted": 32,
   "boards_fetched": 31,
   "boards_not_fetched": 1,
-  "changed_jobs": 3,
+  "changed_jobs": 0,
   "city_counts": {
     "Bengaluru": {
       "all_jobs": 248,
@@ -37,21 +37,21 @@
       "unclassified_jobs": 12
     },
     "Hyderabad": {
-      "all_jobs": 124,
+      "all_jobs": 122,
       "is_tech_false": 5,
-      "is_tech_null": 47,
-      "is_tech_true": 72,
+      "is_tech_null": 46,
+      "is_tech_true": 71,
       "non_tech_jobs": 5,
       "product_design_jobs": 3,
-      "tech_jobs": 72,
-      "unclassified_jobs": 47
+      "tech_jobs": 71,
+      "unclassified_jobs": 46
     },
     "India - Remote/Other": {
-      "all_jobs": 50,
-      "is_tech_false": 15,
+      "all_jobs": 52,
+      "is_tech_false": 17,
       "is_tech_null": 15,
       "is_tech_true": 20,
-      "non_tech_jobs": 15,
+      "non_tech_jobs": 17,
       "product_design_jobs": 0,
       "tech_jobs": 20,
       "unclassified_jobs": 15
@@ -77,14 +77,14 @@
       "unclassified_jobs": 505
     },
     "Pune": {
-      "all_jobs": 38,
-      "is_tech_false": 8,
-      "is_tech_null": 16,
+      "all_jobs": 40,
+      "is_tech_false": 9,
+      "is_tech_null": 17,
       "is_tech_true": 14,
-      "non_tech_jobs": 8,
+      "non_tech_jobs": 9,
       "product_design_jobs": 2,
       "tech_jobs": 14,
-      "unclassified_jobs": 16
+      "unclassified_jobs": 17
     },
     "Unparsed": {
       "all_jobs": 331,
@@ -99,8 +99,8 @@
   },
   "errors": 1,
   "five_city_all_jobs": 501,
-  "five_city_tech_jobs": 238,
-  "jobs_seen_this_run": 1977,
+  "five_city_tech_jobs": 237,
+  "jobs_seen_this_run": 1979,
   "location_rebucket_moves": {
     "all_jobs": 0,
     "by_city": {
@@ -127,7 +127,7 @@
     },
     "tech_jobs": 0
   },
-  "new_jobs": 25,
-  "run_at": "2026-10-23T23:17:14.359655+00:00",
-  "vanished_jobs": 19
+  "new_jobs": 4,
+  "run_at": "2026-10-24T22:37:02.686237+00:00",
+  "vanished_jobs": 2
 }
