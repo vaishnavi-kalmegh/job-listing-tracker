@@ -103,7 +103,7 @@ The is_tech field is true for technical roles and Product/Design (tech-adjacent)
 | Delhi NCR | 59 | 28 | 19 | 12 | 2 |
 | Mumbai | 32 | 3 | 15 | 14 | 0 |
 | India - Remote/Other | 52 | 20 | 17 | 15 | 0 |
-| Outside India | 1190 | 309 | 376 | 505 | 124 |
+| Outside India | 1188 | 309 | 374 | 505 | 124 |
 | Unparsed | 331 | 116 | 82 | 133 | 23 |
 
 ### Excluded from analysis
@@ -118,6 +118,6 @@ These records remain in collection history and are excluded from tech-only analy
 | Delhi NCR | 19 | 12 |
 | Mumbai | 15 | 14 |
 | India - Remote/Other | 17 | 15 |
-| Outside India | 376 | 505 |
+| Outside India | 374 | 505 |
 | Unparsed | 82 | 133 |
 <!-- TECH_FEASIBILITY_END -->

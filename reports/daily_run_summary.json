@@ -3,14 +3,14 @@
     "Data/ML/AI": 143,
     "DevOps/Cloud/SRE/Infra": 71,
     "IT Support/Systems": 31,
-    "Non-Tech": 563,
+    "Non-Tech": 561,
     "Product/Design (tech-adjacent)": 168,
     "QA/Test": 28,
     "Security": 27,
     "Software Engineering": 214,
     "Unclassified": 829
   },
-  "active_jobs_after_run": 2074,
+  "active_jobs_after_run": 2072,
   "boards_attempted": 32,
   "boards_fetched": 31,
   "boards_not_fetched": 1,
@@ -67,11 +67,11 @@
       "unclassified_jobs": 14
     },
     "Outside India": {
-      "all_jobs": 1190,
-      "is_tech_false": 376,
+      "all_jobs": 1188,
+      "is_tech_false": 374,
       "is_tech_null": 505,
       "is_tech_true": 309,
-      "non_tech_jobs": 376,
+      "non_tech_jobs": 374,
       "product_design_jobs": 124,
       "tech_jobs": 309,
       "unclassified_jobs": 505
@@ -100,7 +100,7 @@
   "errors": 1,
   "five_city_all_jobs": 501,
   "five_city_tech_jobs": 237,
-  "jobs_seen_this_run": 1979,
+  "jobs_seen_this_run": 1977,
   "location_rebucket_moves": {
     "all_jobs": 0,
     "by_city": {
@@ -127,7 +127,7 @@
     },
     "tech_jobs": 0
   },
-  "new_jobs": 4,
-  "run_at": "2026-10-24T22:37:02.686237+00:00",
-  "vanished_jobs": 2
+  "new_jobs": 1,
+  "run_at": "2026-10-25T22:42:56.266081+00:00",
+  "vanished_jobs": 3
 }
