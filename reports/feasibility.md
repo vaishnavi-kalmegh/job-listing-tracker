@@ -86,10 +86,10 @@ If volume is below approximately 300 jobs or any city has no observed entry-leve
 | City | All active jobs | Tech-only jobs | Product/Design tag |
 |---|---:|---:|---:|
 | Pune | 40 | 14 | 2 |
-| Hyderabad | 122 | 71 | 3 |
-| Bengaluru | 248 | 121 | 14 |
-| Delhi NCR | 59 | 28 | 2 |
-| Mumbai | 32 | 3 | 0 |
+| Hyderabad | 123 | 70 | 3 |
+| Bengaluru | 249 | 121 | 14 |
+| Delhi NCR | 56 | 28 | 2 |
+| Mumbai | 33 | 4 | 0 |
 
 ### All active jobs by location bucket and is_tech
 
@@ -97,14 +97,14 @@ The is_tech field is true for technical roles and Product/Design (tech-adjacent)
 
 | Location bucket | All active jobs | is_tech = true | is_tech = false | is_tech = null | Product/Design |
 |---|---:|---:|---:|---:|---:|
-| Pune | 40 | 14 | 9 | 17 | 2 |
-| Hyderabad | 122 | 71 | 5 | 46 | 3 |
-| Bengaluru | 248 | 121 | 40 | 87 | 14 |
-| Delhi NCR | 59 | 28 | 19 | 12 | 2 |
-| Mumbai | 32 | 3 | 15 | 14 | 0 |
-| India - Remote/Other | 52 | 20 | 17 | 15 | 0 |
-| Outside India | 1188 | 309 | 374 | 505 | 124 |
-| Unparsed | 331 | 116 | 82 | 133 | 23 |
+| Pune | 40 | 14 | 11 | 15 | 2 |
+| Hyderabad | 123 | 70 | 6 | 47 | 3 |
+| Bengaluru | 249 | 121 | 38 | 90 | 14 |
+| Delhi NCR | 56 | 28 | 19 | 9 | 2 |
+| Mumbai | 33 | 4 | 16 | 13 | 0 |
+| India - Remote/Other | 56 | 21 | 19 | 16 | 0 |
+| Outside India | 1170 | 303 | 372 | 495 | 122 |
+| Unparsed | 321 | 113 | 79 | 129 | 22 |
 
 ### Excluded from analysis
 
@@ -112,12 +112,12 @@ These records remain in collection history and are excluded from tech-only analy
 
 | Location bucket | Non-Tech | Unclassified role |
 |---|---:|---:|
-| Pune | 9 | 17 |
-| Hyderabad | 5 | 46 |
-| Bengaluru | 40 | 87 |
-| Delhi NCR | 19 | 12 |
-| Mumbai | 15 | 14 |
-| India - Remote/Other | 17 | 15 |
-| Outside India | 374 | 505 |
-| Unparsed | 82 | 133 |
+| Pune | 11 | 15 |
+| Hyderabad | 6 | 47 |
+| Bengaluru | 38 | 90 |
+| Delhi NCR | 19 | 9 |
+| Mumbai | 16 | 13 |
+| India - Remote/Other | 19 | 16 |
+| Outside India | 372 | 495 |
+| Unparsed | 79 | 129 |
 <!-- TECH_FEASIBILITY_END -->
