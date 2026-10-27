@@ -1,20 +1,20 @@
 {
   "active_counts_by_role_category": {
-    "Data/ML/AI": 142,
+    "Data/ML/AI": 145,
     "DevOps/Cloud/SRE/Infra": 72,
-    "IT Support/Systems": 34,
-    "Non-Tech": 560,
-    "Product/Design (tech-adjacent)": 165,
-    "QA/Test": 27,
+    "IT Support/Systems": 35,
+    "Non-Tech": 564,
+    "Product/Design (tech-adjacent)": 167,
+    "QA/Test": 25,
     "Security": 28,
-    "Software Engineering": 206,
-    "Unclassified": 814
+    "Software Engineering": 201,
+    "Unclassified": 809
   },
-  "active_jobs_after_run": 2048,
+  "active_jobs_after_run": 2046,
   "boards_attempted": 32,
   "boards_fetched": 31,
   "boards_not_fetched": 1,
-  "changed_jobs": 9,
+  "changed_jobs": 10,
   "city_counts": {
     "Bengaluru": {
       "all_jobs": 249,
@@ -27,54 +27,54 @@
       "unclassified_jobs": 90
     },
     "Delhi NCR": {
-      "all_jobs": 56,
+      "all_jobs": 54,
       "is_tech_false": 19,
-      "is_tech_null": 9,
+      "is_tech_null": 7,
       "is_tech_true": 28,
       "non_tech_jobs": 19,
       "product_design_jobs": 2,
       "tech_jobs": 28,
-      "unclassified_jobs": 9
+      "unclassified_jobs": 7
     },
     "Hyderabad": {
-      "all_jobs": 123,
+      "all_jobs": 118,
       "is_tech_false": 6,
-      "is_tech_null": 47,
-      "is_tech_true": 70,
+      "is_tech_null": 46,
+      "is_tech_true": 66,
       "non_tech_jobs": 6,
       "product_design_jobs": 3,
-      "tech_jobs": 70,
-      "unclassified_jobs": 47
+      "tech_jobs": 66,
+      "unclassified_jobs": 46
     },
     "India - Remote/Other": {
-      "all_jobs": 56,
+      "all_jobs": 55,
       "is_tech_false": 19,
       "is_tech_null": 16,
-      "is_tech_true": 21,
+      "is_tech_true": 20,
       "non_tech_jobs": 19,
       "product_design_jobs": 0,
-      "tech_jobs": 21,
+      "tech_jobs": 20,
       "unclassified_jobs": 16
     },
     "Mumbai": {
-      "all_jobs": 33,
-      "is_tech_false": 16,
-      "is_tech_null": 13,
-      "is_tech_true": 4,
-      "non_tech_jobs": 16,
+      "all_jobs": 37,
+      "is_tech_false": 18,
+      "is_tech_null": 14,
+      "is_tech_true": 5,
+      "non_tech_jobs": 18,
       "product_design_jobs": 0,
-      "tech_jobs": 4,
-      "unclassified_jobs": 13
+      "tech_jobs": 5,
+      "unclassified_jobs": 14
     },
     "Outside India": {
-      "all_jobs": 1170,
-      "is_tech_false": 372,
-      "is_tech_null": 495,
+      "all_jobs": 1172,
+      "is_tech_false": 375,
+      "is_tech_null": 494,
       "is_tech_true": 303,
-      "non_tech_jobs": 372,
-      "product_design_jobs": 122,
+      "non_tech_jobs": 375,
+      "product_design_jobs": 124,
       "tech_jobs": 303,
-      "unclassified_jobs": 495
+      "unclassified_jobs": 494
     },
     "Pune": {
       "all_jobs": 40,
@@ -88,19 +88,19 @@
     },
     "Unparsed": {
       "all_jobs": 321,
-      "is_tech_false": 79,
-      "is_tech_null": 129,
-      "is_tech_true": 113,
-      "non_tech_jobs": 79,
+      "is_tech_false": 78,
+      "is_tech_null": 127,
+      "is_tech_true": 116,
+      "non_tech_jobs": 78,
       "product_design_jobs": 22,
-      "tech_jobs": 113,
-      "unclassified_jobs": 129
+      "tech_jobs": 116,
+      "unclassified_jobs": 127
     }
   },
   "errors": 1,
-  "five_city_all_jobs": 501,
-  "five_city_tech_jobs": 237,
-  "jobs_seen_this_run": 1953,
+  "five_city_all_jobs": 498,
+  "five_city_tech_jobs": 234,
+  "jobs_seen_this_run": 1951,
   "location_rebucket_moves": {
     "all_jobs": 0,
     "by_city": {
@@ -127,7 +127,7 @@
     },
     "tech_jobs": 0
   },
-  "new_jobs": 30,
-  "run_at": "2026-10-26T23:58:00.577576+00:00",
-  "vanished_jobs": 59
+  "new_jobs": 22,
+  "run_at": "2026-10-27T23:53:17.818309+00:00",
+  "vanished_jobs": 26
 }
