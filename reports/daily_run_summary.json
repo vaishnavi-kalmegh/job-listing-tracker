@@ -8,23 +8,23 @@
     "QA/Test": 26,
     "Security": 30,
     "Software Engineering": 188,
-    "Unclassified": 803
+    "Unclassified": 805
   },
-  "active_jobs_after_run": 2028,
+  "active_jobs_after_run": 2030,
   "boards_attempted": 32,
   "boards_fetched": 32,
   "boards_not_fetched": 0,
-  "changed_jobs": 7,
+  "changed_jobs": 0,
   "city_counts": {
     "Bengaluru": {
-      "all_jobs": 246,
+      "all_jobs": 248,
       "is_tech_false": 41,
-      "is_tech_null": 87,
+      "is_tech_null": 89,
       "is_tech_true": 118,
       "non_tech_jobs": 41,
       "product_design_jobs": 13,
       "tech_jobs": 118,
-      "unclassified_jobs": 87
+      "unclassified_jobs": 89
     },
     "Delhi NCR": {
       "all_jobs": 49,
@@ -98,9 +98,9 @@
     }
   },
   "errors": 0,
-  "five_city_all_jobs": 487,
+  "five_city_all_jobs": 489,
   "five_city_tech_jobs": 229,
-  "jobs_seen_this_run": 2028,
+  "jobs_seen_this_run": 2030,
   "location_rebucket_moves": {
     "all_jobs": 0,
     "by_city": {
@@ -127,7 +127,7 @@
     },
     "tech_jobs": 0
   },
-  "new_jobs": 22,
-  "run_at": "2026-10-30T23:56:03.146595+00:00",
-  "vanished_jobs": 33
+  "new_jobs": 2,
+  "run_at": "2026-10-31T23:31:49.123827+00:00",
+  "vanished_jobs": 0
 }

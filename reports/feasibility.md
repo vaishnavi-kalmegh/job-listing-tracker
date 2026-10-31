@@ -77,7 +77,7 @@ If volume is below approximately 300 jobs or any city has no observed entry-leve
 <!-- TECH_FEASIBILITY_START -->
 ## Tech-only feasibility (latest successful collector history)
 
-- Active jobs across the five cities: **487**.
+- Active jobs across the five cities: **489**.
 - Active tech jobs across the five cities: **229**.
 - Tech-only volume clears approximately 300 jobs: **NO**.
 - Existing active listings moved from non-city buckets into the five cities by the updated location rules: **0**, including **0 tech jobs**.
@@ -87,7 +87,7 @@ If volume is below approximately 300 jobs or any city has no observed entry-leve
 |---|---:|---:|---:|
 | Pune | 44 | 18 | 2 |
 | Hyderabad | 117 | 62 | 3 |
-| Bengaluru | 246 | 118 | 13 |
+| Bengaluru | 248 | 118 | 13 |
 | Delhi NCR | 49 | 26 | 2 |
 | Mumbai | 31 | 5 | 0 |
 
@@ -99,7 +99,7 @@ The is_tech field is true for technical roles and Product/Design (tech-adjacent)
 |---|---:|---:|---:|---:|---:|
 | Pune | 44 | 18 | 11 | 15 | 2 |
 | Hyderabad | 117 | 62 | 7 | 48 | 3 |
-| Bengaluru | 246 | 118 | 41 | 87 | 13 |
+| Bengaluru | 248 | 118 | 41 | 89 | 13 |
 | Delhi NCR | 49 | 26 | 15 | 8 | 2 |
 | Mumbai | 31 | 5 | 14 | 12 | 0 |
 | India - Remote/Other | 52 | 18 | 18 | 16 | 0 |
@@ -114,7 +114,7 @@ These records remain in collection history and are excluded from tech-only analy
 |---|---:|---:|
 | Pune | 11 | 15 |
 | Hyderabad | 7 | 48 |
-| Bengaluru | 41 | 87 |
+| Bengaluru | 41 | 89 |
 | Delhi NCR | 15 | 8 |
 | Mumbai | 14 | 12 |
 | India - Remote/Other | 18 | 16 |
