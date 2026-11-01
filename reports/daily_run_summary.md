@@ -1,11 +1,11 @@
 # Daily collection summary
 
-- Run time (UTC): 2026-10-31T23:31:49.123827+00:00
+- Run time (UTC): 2026-11-01T23:43:30.199621+00:00
 - Boards attempted: 32
 - Boards fetched completely: 32
 - Errors/incomplete boards: 0
-- New jobs: 2
-- Changed jobs: 0
+- New jobs: 0
+- Changed jobs: 1
 - Vanished jobs (confirmed only by complete snapshots): 0
 - Active jobs in private history after run: 2030
 - Active tech jobs in the five cities: 229
