@@ -1,13 +1,13 @@
 # Daily collection summary
 
-- Run time (UTC): 2026-11-07T00:11:19.829634+00:00
+- Run time (UTC): 2026-11-07T23:45:09.731516+00:00
 - Boards attempted: 32
 - Boards fetched completely: 32
 - Errors/incomplete boards: 0
-- New jobs: 24
-- Changed jobs: 112
-- Vanished jobs (confirmed only by complete snapshots): 23
-- Active jobs in private history after run: 2047
+- New jobs: 1
+- Changed jobs: 0
+- Vanished jobs (confirmed only by complete snapshots): 0
+- Active jobs in private history after run: 2048
 - Active tech jobs in the five cities: 248
 - Existing active listings rebucketed into the five cities: 0
 - Tech jobs among those rebucketed listings: 0
@@ -23,7 +23,7 @@
 | Security | 39 |
 | IT Support/Systems | 36 |
 | Product/Design (tech-adjacent) | 157 |
-| Non-Tech | 555 |
+| Non-Tech | 556 |
 | Unclassified | 797 |
 
 ## Excluded from analysis
@@ -32,7 +32,7 @@ Non-Tech and Unclassified roles remain in collection history but are excluded fr
 
 | Role category | Count |
 |---|---:|
-| Non-Tech | 555 |
+| Non-Tech | 556 |
 | Unclassified | 797 |
 
 This public summary contains aggregate counts only; no job titles, descriptions, URLs, company-level errors, or raw snapshots.
