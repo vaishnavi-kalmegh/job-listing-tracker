@@ -1,14 +1,14 @@
 # Daily collection summary
 
-- Run time (UTC): 2026-11-15T00:00:34.399524+00:00
+- Run time (UTC): 2026-11-16T00:06:54.543280+00:00
 - Boards attempted: 32
 - Boards fetched completely: 32
 - Errors/incomplete boards: 0
 - New jobs: 0
 - Changed jobs: 0
 - Vanished jobs (confirmed only by complete snapshots): 1
-- Active jobs in private history after run: 1978
-- Active tech jobs in the five cities: 258
+- Active jobs in private history after run: 1977
+- Active tech jobs in the five cities: 257
 - Existing active listings rebucketed into the five cities: 0
 - Tech jobs among those rebucketed listings: 0
 
@@ -18,7 +18,7 @@
 |---|---:|
 | Software Engineering | 197 |
 | Data/ML/AI | 148 |
-| DevOps/Cloud/SRE/Infra | 86 |
+| DevOps/Cloud/SRE/Infra | 85 |
 | QA/Test | 28 |
 | Security | 42 |
 | IT Support/Systems | 33 |

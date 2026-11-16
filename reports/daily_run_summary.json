@@ -1,7 +1,7 @@
 {
   "active_counts_by_role_category": {
     "Data/ML/AI": 148,
-    "DevOps/Cloud/SRE/Infra": 86,
+    "DevOps/Cloud/SRE/Infra": 85,
     "IT Support/Systems": 33,
     "Non-Tech": 540,
     "Product/Design (tech-adjacent)": 160,
@@ -10,7 +10,7 @@
     "Software Engineering": 197,
     "Unclassified": 744
   },
-  "active_jobs_after_run": 1978,
+  "active_jobs_after_run": 1977,
   "boards_attempted": 32,
   "boards_fetched": 32,
   "boards_not_fetched": 0,
@@ -37,13 +37,13 @@
       "unclassified_jobs": 11
     },
     "Hyderabad": {
-      "all_jobs": 113,
+      "all_jobs": 112,
       "is_tech_false": 7,
       "is_tech_null": 43,
-      "is_tech_true": 63,
+      "is_tech_true": 62,
       "non_tech_jobs": 7,
       "product_design_jobs": 3,
-      "tech_jobs": 63,
+      "tech_jobs": 62,
       "unclassified_jobs": 43
     },
     "India - Remote/Other": {
@@ -98,9 +98,9 @@
     }
   },
   "errors": 0,
-  "five_city_all_jobs": 486,
-  "five_city_tech_jobs": 258,
-  "jobs_seen_this_run": 1978,
+  "five_city_all_jobs": 485,
+  "five_city_tech_jobs": 257,
+  "jobs_seen_this_run": 1977,
   "location_rebucket_moves": {
     "all_jobs": 0,
     "by_city": {
@@ -128,6 +128,6 @@
     "tech_jobs": 0
   },
   "new_jobs": 0,
-  "run_at": "2026-11-15T00:00:34.399524+00:00",
+  "run_at": "2026-11-16T00:06:54.543280+00:00",
   "vanished_jobs": 1
 }
