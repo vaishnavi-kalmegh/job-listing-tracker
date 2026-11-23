@@ -3,11 +3,11 @@
     "Data/ML/AI": 157,
     "DevOps/Cloud/SRE/Infra": 86,
     "IT Support/Systems": 34,
-    "Non-Tech": 540,
+    "Non-Tech": 541,
     "Product/Design (tech-adjacent)": 166,
     "QA/Test": 26,
     "Security": 40,
-    "Software Engineering": 187,
+    "Software Engineering": 186,
     "Unclassified": 754
   },
   "active_jobs_after_run": 1990,
@@ -17,13 +17,13 @@
   "changed_jobs": 0,
   "city_counts": {
     "Bengaluru": {
-      "all_jobs": 249,
+      "all_jobs": 248,
       "is_tech_false": 42,
       "is_tech_null": 79,
-      "is_tech_true": 128,
+      "is_tech_true": 127,
       "non_tech_jobs": 42,
       "product_design_jobs": 14,
-      "tech_jobs": 128,
+      "tech_jobs": 127,
       "unclassified_jobs": 79
     },
     "Delhi NCR": {
@@ -77,11 +77,11 @@
       "unclassified_jobs": 438
     },
     "Pune": {
-      "all_jobs": 62,
-      "is_tech_false": 7,
+      "all_jobs": 63,
+      "is_tech_false": 8,
       "is_tech_null": 18,
       "is_tech_true": 37,
-      "non_tech_jobs": 7,
+      "non_tech_jobs": 8,
       "product_design_jobs": 4,
       "tech_jobs": 37,
       "unclassified_jobs": 18
@@ -99,7 +99,7 @@
   },
   "errors": 0,
   "five_city_all_jobs": 511,
-  "five_city_tech_jobs": 258,
+  "five_city_tech_jobs": 257,
   "jobs_seen_this_run": 1990,
   "location_rebucket_moves": {
     "all_jobs": 0,
@@ -127,7 +127,7 @@
     },
     "tech_jobs": 0
   },
-  "new_jobs": 8,
-  "run_at": "2026-11-22T00:33:29.006183+00:00",
-  "vanished_jobs": 3
+  "new_jobs": 1,
+  "run_at": "2026-11-23T01:00:05.727062+00:00",
+  "vanished_jobs": 1
 }
