@@ -1,50 +1,50 @@
 {
   "active_counts_by_role_category": {
     "Data/ML/AI": 158,
-    "DevOps/Cloud/SRE/Infra": 87,
+    "DevOps/Cloud/SRE/Infra": 86,
     "IT Support/Systems": 33,
-    "Non-Tech": 536,
-    "Product/Design (tech-adjacent)": 167,
+    "Non-Tech": 545,
+    "Product/Design (tech-adjacent)": 171,
     "QA/Test": 29,
-    "Security": 40,
-    "Software Engineering": 185,
-    "Unclassified": 753
+    "Security": 41,
+    "Software Engineering": 184,
+    "Unclassified": 764
   },
-  "active_jobs_after_run": 1988,
+  "active_jobs_after_run": 2011,
   "boards_attempted": 32,
   "boards_fetched": 32,
   "boards_not_fetched": 0,
-  "changed_jobs": 19,
+  "changed_jobs": 8,
   "city_counts": {
     "Bengaluru": {
-      "all_jobs": 249,
-      "is_tech_false": 42,
-      "is_tech_null": 79,
-      "is_tech_true": 128,
-      "non_tech_jobs": 42,
-      "product_design_jobs": 14,
-      "tech_jobs": 128,
-      "unclassified_jobs": 79
+      "all_jobs": 266,
+      "is_tech_false": 47,
+      "is_tech_null": 83,
+      "is_tech_true": 136,
+      "non_tech_jobs": 47,
+      "product_design_jobs": 18,
+      "tech_jobs": 136,
+      "unclassified_jobs": 83
     },
     "Delhi NCR": {
-      "all_jobs": 52,
-      "is_tech_false": 8,
-      "is_tech_null": 14,
+      "all_jobs": 48,
+      "is_tech_false": 7,
+      "is_tech_null": 11,
       "is_tech_true": 30,
-      "non_tech_jobs": 8,
+      "non_tech_jobs": 7,
       "product_design_jobs": 4,
       "tech_jobs": 30,
-      "unclassified_jobs": 14
+      "unclassified_jobs": 11
     },
     "Hyderabad": {
-      "all_jobs": 117,
-      "is_tech_false": 9,
-      "is_tech_null": 48,
-      "is_tech_true": 60,
-      "non_tech_jobs": 9,
+      "all_jobs": 110,
+      "is_tech_false": 8,
+      "is_tech_null": 47,
+      "is_tech_true": 55,
+      "non_tech_jobs": 8,
       "product_design_jobs": 3,
-      "tech_jobs": 60,
-      "unclassified_jobs": 48
+      "tech_jobs": 55,
+      "unclassified_jobs": 47
     },
     "India - Remote/Other": {
       "all_jobs": 54,
@@ -57,50 +57,50 @@
       "unclassified_jobs": 21
     },
     "Mumbai": {
-      "all_jobs": 36,
+      "all_jobs": 35,
       "is_tech_false": 21,
-      "is_tech_null": 11,
+      "is_tech_null": 10,
       "is_tech_true": 4,
       "non_tech_jobs": 21,
       "product_design_jobs": 0,
       "tech_jobs": 4,
-      "unclassified_jobs": 11
+      "unclassified_jobs": 10
     },
     "Outside India": {
-      "all_jobs": 1096,
-      "is_tech_false": 351,
-      "is_tech_null": 437,
-      "is_tech_true": 308,
-      "non_tech_jobs": 351,
+      "all_jobs": 1112,
+      "is_tech_false": 360,
+      "is_tech_null": 443,
+      "is_tech_true": 309,
+      "non_tech_jobs": 360,
       "product_design_jobs": 120,
-      "tech_jobs": 308,
-      "unclassified_jobs": 437
+      "tech_jobs": 309,
+      "unclassified_jobs": 443
     },
     "Pune": {
-      "all_jobs": 61,
-      "is_tech_false": 7,
+      "all_jobs": 58,
+      "is_tech_false": 6,
       "is_tech_null": 17,
-      "is_tech_true": 37,
-      "non_tech_jobs": 7,
+      "is_tech_true": 35,
+      "non_tech_jobs": 6,
       "product_design_jobs": 4,
-      "tech_jobs": 37,
+      "tech_jobs": 35,
       "unclassified_jobs": 17
     },
     "Unparsed": {
-      "all_jobs": 323,
-      "is_tech_false": 82,
-      "is_tech_null": 126,
-      "is_tech_true": 115,
-      "non_tech_jobs": 82,
+      "all_jobs": 328,
+      "is_tech_false": 80,
+      "is_tech_null": 132,
+      "is_tech_true": 116,
+      "non_tech_jobs": 80,
       "product_design_jobs": 21,
-      "tech_jobs": 115,
-      "unclassified_jobs": 126
+      "tech_jobs": 116,
+      "unclassified_jobs": 132
     }
   },
   "errors": 0,
-  "five_city_all_jobs": 515,
-  "five_city_tech_jobs": 259,
-  "jobs_seen_this_run": 1988,
+  "five_city_all_jobs": 517,
+  "five_city_tech_jobs": 260,
+  "jobs_seen_this_run": 2011,
   "location_rebucket_moves": {
     "all_jobs": 0,
     "by_city": {
@@ -127,7 +127,7 @@
     },
     "tech_jobs": 0
   },
-  "new_jobs": 25,
-  "run_at": "2026-11-24T04:54:01.731598+00:00",
-  "vanished_jobs": 32
+  "new_jobs": 44,
+  "run_at": "2026-11-25T03:38:13.543913+00:00",
+  "vanished_jobs": 24
 }
