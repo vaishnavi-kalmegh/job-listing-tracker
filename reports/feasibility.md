@@ -77,19 +77,19 @@ If volume is below approximately 300 jobs or any city has no observed entry-leve
 <!-- TECH_FEASIBILITY_START -->
 ## Tech-only feasibility (latest successful collector history)
 
-- Active jobs across the five cities: **518**.
-- Active tech jobs across the five cities: **261**.
+- Active jobs across the five cities: **513**.
+- Active tech jobs across the five cities: **260**.
 - Tech-only volume clears approximately 300 jobs: **NO**.
 - Existing active listings moved from non-city buckets into the five cities by the updated location rules: **0**, including **0 tech jobs**.
 - Counts below are active records in the private collection database; all roles are collected, and filtering is applied only for analysis.
 
 | City | All active jobs | Tech-only jobs | Product/Design tag |
 |---|---:|---:|---:|
-| Pune | 61 | 39 | 4 |
-| Hyderabad | 111 | 56 | 3 |
+| Pune | 60 | 38 | 4 |
+| Hyderabad | 108 | 56 | 3 |
 | Bengaluru | 262 | 132 | 18 |
 | Delhi NCR | 48 | 29 | 4 |
-| Mumbai | 36 | 5 | 0 |
+| Mumbai | 35 | 5 | 0 |
 
 ### All active jobs by location bucket and is_tech
 
@@ -97,14 +97,14 @@ The is_tech field is true for technical roles and Product/Design (tech-adjacent)
 
 | Location bucket | All active jobs | is_tech = true | is_tech = false | is_tech = null | Product/Design |
 |---|---:|---:|---:|---:|---:|
-| Pune | 61 | 39 | 5 | 17 | 4 |
-| Hyderabad | 111 | 56 | 8 | 47 | 3 |
-| Bengaluru | 262 | 132 | 46 | 84 | 18 |
-| Delhi NCR | 48 | 29 | 8 | 11 | 4 |
-| Mumbai | 36 | 5 | 20 | 11 | 0 |
-| India - Remote/Other | 56 | 17 | 18 | 21 | 1 |
-| Outside India | 1112 | 302 | 361 | 449 | 118 |
-| Unparsed | 328 | 115 | 80 | 133 | 20 |
+| Pune | 60 | 38 | 5 | 17 | 4 |
+| Hyderabad | 108 | 56 | 8 | 44 | 3 |
+| Bengaluru | 262 | 132 | 45 | 85 | 18 |
+| Delhi NCR | 48 | 29 | 9 | 10 | 4 |
+| Mumbai | 35 | 5 | 19 | 11 | 0 |
+| India - Remote/Other | 52 | 15 | 18 | 19 | 1 |
+| Outside India | 1103 | 298 | 363 | 442 | 115 |
+| Unparsed | 330 | 115 | 82 | 133 | 20 |
 
 ### Excluded from analysis
 
@@ -113,11 +113,11 @@ These records remain in collection history and are excluded from tech-only analy
 | Location bucket | Non-Tech | Unclassified role |
 |---|---:|---:|
 | Pune | 5 | 17 |
-| Hyderabad | 8 | 47 |
-| Bengaluru | 46 | 84 |
-| Delhi NCR | 8 | 11 |
-| Mumbai | 20 | 11 |
-| India - Remote/Other | 18 | 21 |
-| Outside India | 361 | 449 |
-| Unparsed | 80 | 133 |
+| Hyderabad | 8 | 44 |
+| Bengaluru | 45 | 85 |
+| Delhi NCR | 9 | 10 |
+| Mumbai | 19 | 11 |
+| India - Remote/Other | 18 | 19 |
+| Outside India | 363 | 442 |
+| Unparsed | 82 | 133 |
 <!-- TECH_FEASIBILITY_END -->
